@@ -15,7 +15,7 @@
 # These addresses are used to send e-mails to. The to-address needs
 # to be filled; cc-address can be empty, one address or a comma
 # separated list of addresses.
-:global EmailGeneralTo "";
+:global EmailGeneralTo "lupael@i4e.com.bd";
 :global EmailGeneralCc "";
 #:global EmailGeneralTo "mail@example.com";
 #:global EmailGeneralCc "another@example.com,third@example.com";
@@ -56,7 +56,7 @@
 # This defines what backups to generate and what password to use.
 :global BackupSendBinary false;
 :global BackupSendExport true;
-:global BackupPassword "v3ry-s3cr3t";
+:global BackupPassword "secret";
 :global BackupRandomDelay 0;
 # These credentials are used to upload backup and config export files.
 # SFTP authentication is tricky, you may have to limit authentication
@@ -174,10 +174,10 @@
 #:global CertRenewUrl "https://example.com/certificates/";
 :global CertRenewTime 3w;
 :global CertRenewPass {
-  "v3ry-s3cr3t";
-  "4n0th3r-s3cr3t";
+  "secret";
+  "secret";
 }
 :global CertIssuedExportPass {
-  "cert1-cn"="v3ry-s3cr3t";
-  "cert2-cn"="4n0th3r-s3cr3t";
+  "cert1-cn"="secret";
+  "cert2-cn"="secret";
 }
