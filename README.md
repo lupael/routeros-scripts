@@ -1,9 +1,6 @@
 RouterOS Scripts
 ================
 
-[![GitHub stars](https://img.shields.io/github/stars/eworm-de/routeros-scripts?style=social)](https://github.com/eworm-de/routeros-scripts/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/eworm-de/routeros-scripts?style=social)](https://github.com/eworm-de/routeros-scripts/network)
-[![GitHub watchers](https://img.shields.io/github/watchers/eworm-de/routeros-scripts?style=social)](https://github.com/eworm-de/routeros-scripts/watchers)
 
 ![RouterOS Scripts Logo](logo.svg)
 
@@ -33,15 +30,6 @@ If you know how things work just copy and paste the
 `global-config-overlay`!
 First time users should take the long way below.
 
-### Live presentation
-
-Want to see it in action? I've had a presentation [Repository based
-RouterOS script distribution](https://www.youtube.com/watch?v=B9neG3oAhcY)
-including demonstation recorded live at [MUM Europe
-2019](https://mum.mikrotik.com/2019/EU/) in Vienna.
-
-*Be warned!* Some details changed. So see the presentation, then follow
-the steps below for up-to-date commands.
 
 ### The long way in detail
 
@@ -50,7 +38,7 @@ download the certificates. If you intend to download the scripts from a
 different location (for example from github.com) install the corresponding
 certificate chain.
 
-    / tool fetch "https://git.eworm.de/cgit/routeros-scripts/plain/certs/R3.pem" dst-path="letsencrypt-R3.pem";
+    / tool fetch "https://raw.githubusercontent.com/lupael/routeros-scripts/main/certs/R3.pem" dst-path="letsencrypt-R3.pem";
 
 ![screenshot: download certs](README.d/01-download-certs.png)
 
@@ -84,7 +72,7 @@ date and time is set correctly!
 
 Now let's download the main scripts and add them in configuration on the fly.
 
-    :foreach Script in={ "global-config"; "global-config-overlay"; "global-functions" } do={ / system script add name=$Script source=([ / tool fetch check-certificate=yes-without-crl ("https://git.eworm.de/cgit/routeros-scripts/plain/" . $Script) output=user as-value]->"data"); };
+    :foreach Script in={ "global-config"; "global-config-overlay"; "global-functions" } do={ / system script add name=$Script source=([ / tool fetch check-certificate=yes-without-crl ("https://github.com/lupael/routeros-scripts.git" . $Script) output=user as-value]->"data"); };
 
 ![screenshot: import scripts](README.d/04-import-scripts.png)
 
@@ -207,33 +195,6 @@ Available modules
 * [Manage ports in bridge](doc/mod/bridge-port-to.md)
 * [Manage VLANs on bridge ports](doc/mod/bridge-port-vlan.md)
 
-Contact
--------
-
-We have a Telegram Group [RouterOS-Scripts](https://t.me/routeros_scripts)!
-Get help, give feedback or just chat - but do not expect free professional
-support!
-
-Contribute
-----------
-
-Thanks a lot for [past contributions](CONTRIBUTIONS.md)!
-
-### Patches, issues and whishlist
-
-Feel free to contact me via e-mail or open an
-[issue at github](https://github.com/eworm-de/routeros-scripts/issues).
-
-### Donate
-
-This project is developed in private spare time and usage is free of charge
-for you. If you like the scripts and think this is of value for you or your
-business please consider to
-[donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A4ZXBD6YS2W8J).
-
-[![donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A4ZXBD6YS2W8J)
-
-Thanks a lot for your support!
 
 License and warranty
 --------------------
@@ -252,11 +213,5 @@ Upstream
 --------
 
 URL:
-[GitHub.com](https://github.com/eworm-de/routeros-scripts#routeros-scripts)
+[GitHub.com](https://github.com/lupael/routeros-scripts#routeros-scripts)
 
-Mirror:
-[eworm.de](https://git.eworm.de/cgit/routeros-scripts/about/)
-[GitLab.com](https://gitlab.com/eworm-de/routeros-scripts#routeros-scripts)
-
----
-[▲ Go back to top](#top)
