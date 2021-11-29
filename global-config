@@ -1,10 +1,6 @@
 #!rsc by RouterOS
 # RouterOS script: global-config
-# Copyright (c) 2013-2021 Christian Hesse <mail@eworm.de>
-# https://git.eworm.de/cgit/routeros-scripts/about/COPYING.md
-#
-# global configuration
-# https://git.eworm.de/cgit/routeros-scripts/about/
+
 
 # Make sure all configuration properties are up to date and this
 # value is in sync with value in script 'global-functions'!
@@ -155,12 +151,11 @@
 
 # Enable this to fetch scripts from given url.
 :global ScriptUpdatesFetch true;
-:global ScriptUpdatesBaseUrl "https://git.eworm.de/cgit/routeros-scripts/plain/";
+:global ScriptUpdatesBaseUrl "https://raw.githubusercontent.com/lupael/routeros-scripts/main/";
 # alternative urls - main: stable code - next: currently in development
-#:global ScriptUpdatesBaseUrl "https://raw.githubusercontent.com/eworm-de/routeros-scripts/main/";
-#:global ScriptUpdatesBaseUrl "https://raw.githubusercontent.com/eworm-de/routeros-scripts/next/";
-#:global ScriptUpdatesBaseUrl "https://gitlab.com/eworm-de/routeros-scripts/raw/main/";
-#:global ScriptUpdatesBaseUrl "https://gitlab.com/eworm-de/routeros-scripts/raw/next/";
+#:global ScriptUpdatesBaseUrl "https://raw.githubusercontent.com/lupael/routeros-scripts/main/";
+#:global ScriptUpdatesBaseUrl "https://raw.githubusercontent.com/lupael/routeros-scripts/next/";
+
 :global ScriptUpdatesUrlSuffix "";
 # use next branch with default url (git.eworm.de)
 #:global ScriptUpdatesUrlSuffix "\?h=next";
@@ -171,10 +166,6 @@
 :global ScriptRunOnceBaseUrl "";
 :global ScriptRunOnceUrlSuffix "";
 
-# This project is developed in private spare time and usage is free of charge
-# for you. If you like the scripts and think this is of value for you or your
-# business please consider a donation:
-# https://git.eworm.de/cgit/routeros-scripts/about/#donate
 # Enable this to silence donation hint.
 :global IDonate false;
 
